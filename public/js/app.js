@@ -23,7 +23,10 @@ req.onload = () => {
     
     p.appendChild(pText);
 
+    const img = document.createElement('img');
+    img.src = '../data/duck.jpg';
+
     document.getElementById('Exercise1').appendChild(h1);
     document.getElementById('Exercise1').appendChild(p);
-    
+    document.getElementById('Exercise1').appendChild(img);
 };
