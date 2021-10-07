@@ -25,4 +25,5 @@ req.onload = () => {
 
     document.getElementById('Exercise1').appendChild(h1);
     document.getElementById('Exercise1').appendChild(p);
+    
 };
