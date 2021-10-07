@@ -14,19 +14,32 @@ req.onload = () => {
     const intro = data['intro'];
 
     const h1 = document.createElement('h1');
-    const h1Text = document.createTextNode(header);
-
-    h1.appendChild(h1Text);
-
     const p = document.createElement('p');
-    const pText = document.createTextNode(intro);
-    
-    p.appendChild(pText);
-
+    const btn = document.createElement('button');
+    const br = document.createElement('br');
     const img = document.createElement('img');
-    img.src = '../data/duck.jpg';
+
+    h1.innerText = header;
+    p.innerText = intro;
+    btn.innerText = 'Hide';
+    img.src = data['articleImage'];
 
     document.getElementById('Exercise1').appendChild(h1);
     document.getElementById('Exercise1').appendChild(p);
+    document.getElementById('Exercise1').appendChild(btn);
+    document.getElementById('Exercise1').appendChild(br);
     document.getElementById('Exercise1').appendChild(img);
+    
+    btn.addEventListener("click", () => {
+
+        if (btn.innerText === "Hide") {
+
+            btn.innerText = "Show";
+            document.getElementById('Exercise1').removeChild(img);
+
+        } else {
+            btn.innerText = "Hide";
+            document.getElementById('Exercise1').appendChild(img);
+        }
+    });
 };
