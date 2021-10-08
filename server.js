@@ -5,9 +5,11 @@ const app = express();
 const port = 8042;
 const indexRouter = require('./routes/index');
 
+app.use(express.urlencoded());
 app.use(express.static('public'));
+
 app.use('/', indexRouter);
 
 app.listen(port);
 
-console.log('Server up and running, listning on port: ' + port);
+console.log(`Server up and running, listning on port: ${port}`);
